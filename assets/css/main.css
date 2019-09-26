@@ -1,3 +1,132 @@
+/* Table of Contents:
+1.0.0 Sola Normalize
+2.0.0 Mobile Styles (default - mobile first)
+            2.1.0 Entry Content / Elements Page
+            2.2.0 Homepage
+            2.3.0 General Content
+            2.4.0 Sermons
+            2.5.0 Sermon Single
+            2.6.0 Blog
+            2.7.0 Blog Single
+            2.8.0 Events
+            2.9.0 Event Single
+            2.10.0 Taxonomy xPage: Topics
+            2.11.0 Taxonomy Page: Author/Speaker
+            2.12.0 Taxonomy Page: Scripture
+            2.13.0 Taxonomy Page: Date
+            2.14.0 Taxonomy Page: Series
+            2.15.0 Results: Taxonomy Results
+            2.16.0 Results: Search Results
+            2.17.0 Error 404
+3.0.0 Large Phone Styles (min-width: 480px)
+4.0.0 Tablet Styles (min-width: 768px)
+            5.1.0 General Content
+            5.2.0 Taxonomy Page: Author/Speaker
+5.0.0 Desktop Styles (min-width: 992px)
+6.0.0 Large Desktop Styles (min-width: 1200px)
+7.0.0 Big Desktop Styles (min-width: 1600px)        
+*/
+
+/*===============================
+    3.0.0 Icon Fonts - Dfault
+  ===============================*/
+
+  @font-face {
+    font-family: 'crete-icons';
+    src:  url('../fonts/crete-icons.eot?etcal2');
+    src:  url('../fonts/crete-icons.eot?etcal2#iefix') format('embedded-opentype'),
+      url('../fonts/crete-icons.ttf?etcal2') format('truetype'),
+      url('../fonts/crete-icons.woff?etcal2') format('woff'),
+      url('../fonts/crete-icons.svg?etcal2#crete-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'design12';
+    src:  url('../fonts/design12.eot?dloc9m');
+    src:  url('../fonts/design12.eot?dloc9m#iefix') format('embedded-opentype'),
+      url('../fonts/design12.ttf?dloc9m') format('truetype'),
+      url('../fonts/design12.woff?dloc9m') format('woff'),
+      url('../fonts/design12.svg?dloc9m#design12') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'design12' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-calender:before {
+    content: "\e900";
+  }
+  .icon-chevron-down:before {
+    content: "\e901";
+  }
+  .icon-chevron-left:before {
+    content: "\e902";
+  }
+  .icon-chevron-right:before {
+    content: "\e903";
+  }
+  .icon-chevron-up:before {
+    content: "\e904";
+  }
+  .icon-close:before {
+    content: "\e905";
+  }
+  .icon-email:before {
+    content: "\e906";
+  }
+  .icon-facebook1:before {
+    content: "\e907";
+  }
+  .icon-instagram:before {
+    content: "\e908";
+  }
+  .icon-link:before {
+    content: "\e909";
+  }
+  .icon-location:before {
+    content: "\e90a";
+  }
+  .icon-map:before {
+    content: "\e90b";
+  }
+  .icon-play:before {
+    content: "\e90c";
+  }
+  .icon-search:before {
+    content: "\e90d";
+  }
+  .icon-share:before {
+    content: "\e90e";
+  }
+  .icon-triangle-right:before {
+    content: "\e90f";
+  }
+  .icon-twitter:before {
+    content: "\e910";
+  }  
+
+/* End Icon Fonts
+
+/*=============================
+  General
+===============================*/
+
 /*Sola Normalize*/
 
 * {
@@ -7,6 +136,15 @@
 
 html {
     overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: 'Crimson Text', serif;
+}
+
+:root {
+  --primary-color-regular: #69B227;
 }
 
 img {
@@ -108,3 +246,1203 @@ img.background-image {
 	background-color: #222222; /*Change to Primary Color*/
 	color: #ffffff; /*Change if necessary*/
 }
+
+/*=============================
+===============================
+  Utility-classes
+===============================
+===============================*/
+
+/*===============================
+    Utility-classes
+  ===============================*/
+
+/*=== Utility-classes - Mobile+ ===*/
+
+.js-noscroll {
+	overflow: hidden;
+}
+
+.container {
+  padding: 15px;
+}
+
+/* ======= Utility-classes - Tablet+ ======= */
+@media (min-width: 768px) {
+
+  .container {
+    padding: 0 40px;
+  }
+}
+
+/* ======= Utility-classes - Desktop+ ======= */
+@media (min-width: 992px) {
+
+  .container {
+    padding: 0 50px;
+  }
+
+}
+
+/* =======Container - Extra Desktop+ ======= */
+@media (min-width: 1600px) {
+
+  .container {
+    width: 1080px;
+    padding-right: 0;
+    padding-left: 0; 
+    margin: auto;
+  }
+
+  .big-container {
+    width: 1440px;
+    margin: auto;
+    padding-right: 0;
+    padding-left: 0; 
+  }
+
+}
+
+/*===============================
+  ===============================
+    Homepage
+  ===============================
+  ===============================*/
+
+/*===============================
+    Primary-Header
+  ===============================*/
+
+/* ======= Primary-Header - Mobile+ ======= */
+
+.main-header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 500;
+}
+
+.primary-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, .11);
+}
+
+.featured-contact,
+.primary-nav,
+.featured-direction {
+  display: none;
+}
+
+/*Logo*/
+
+.logo {
+  max-height: 50px;
+  margin: auto 0; /*Change according to design*/
+}
+
+.logo img {
+  max-width: 120px;
+  max-height: 50px;
+}
+
+.logo a,
+.logo a > h1 {
+  /*If user does not provide logo, then the text of the  title of their site will go in the <a> element in place of the <img>, so be sure to style to a plain text (non-image) logo*/
+  margin: 0;
+  letter-spacing: 2px;
+  font-size: 16px;  
+  font-family: 'Source Sans Pro', sans-serif;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .9);
+}
+
+/* End Logo */
+
+/* Mob-Featured-btn */
+
+.mob-featured-btn {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  margin-right: -15px;
+}
+
+.mob-search-btn {
+  height: 100%;
+  font-size: 16px;
+  padding: 15px;
+  color: #fff;
+}
+
+.menu-icon {
+  width: 52px;
+  cursor: pointer;
+  align-self: stretch;
+  z-index: 100;
+  padding: 15px;
+  border-left: 1px solid rgba(255, 255, 255, .11);
+}
+
+.icon-bar-1, 
+.icon-bar-2 {
+  display: flex;
+  height: 3px;
+  transition: transform .5s;
+  background-color: #fff;
+  -webkit-transition: transform .5s;
+  -moz-transition: transform .5s;
+  -ms-transition: transform .5s;
+  -o-transition: transform .5s;
+}
+
+.icon-bar-1,
+.icon-bar-2 {
+  width: 22px;
+}
+
+.icon-bar-2 {
+  margin-top: 7px;
+}
+
+.menu-icon.js-active .icon-bar-1 {
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.menu-icon.js-active .icon-bar-2 {
+  transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  margin-top: -3px;
+}
+
+/* End-Mob-Featured-btn */
+
+/* Mob-Search */
+
+.mob-search {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  max-height: 60px;
+  padding: 15px;
+  background-color: #69B227;
+  background-color: var(--primary-color-regular);
+  display: flex;
+  align-items: center;
+  transform: translateY(-2000px);
+  -webkit-transform: translateY(-2000px);
+  -moz-transform: translateY(-2000px);
+  -ms-transform: translateY(-2000px);
+  -o-transform: translateY(-2000px);
+  transition: transform .3s;
+  -webkit-transition: transform .3s;
+  -moz-transition: transform .3s;
+  -ms-transition: transform .3s;
+  -o-transition: transform .3s;
+}
+
+.mob-search.js-active {
+  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -o-transform: translateY(0px);
+}
+
+.mob-search-form {
+  flex-basis: 95%;
+  display: flex;
+  align-items: center;
+}
+
+.mob-search-form > button {
+  font-size: 12px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.mob-search-form input {
+  border-width: 0px;
+  border-color: transparent;
+  text-rendering: auto;
+  transition-duration: 1s;
+  height: 35px;
+  width: 100%;
+  padding-left: 6px;
+  align-self: center;
+  outline: 0;
+  background-color: transparent;
+}
+
+.mob-search-form input[type=search] {
+  color: rgba(255, 255, 255, .6);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.mob-search-form input::-webkit-input-placeholder,
+.mob-search-form input:-ms-input-placeholder,
+.mob-search-form input::placeholder {
+  color: rgba(255, 255, 255, .7);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.mob-search-form input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: rgba(255, 255, 255, .7);
+}
+.mob-search-form input::-moz-placeholder { /* Firefox 19+ */
+  color: rgba(255, 255, 255, .7);
+}
+.mob-search-form input:-ms-input-placeholder { /* IE 10+ */
+  color: rgba(255, 255, 255, .7);
+}
+.mob-search-form input:-moz-placeholder { /* Firefox 18- */
+  color: rgba(255, 255, 255, .7);
+}
+
+.search-close-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  font-size: 12px;
+  padding: 10px 0;
+  color: rgba(255, 255, 255, .7);
+}
+
+/* End-Mob-Search */
+
+/* Mob-Navigation */
+
+.primary-nav-mobile {
+  position: fixed;
+  width: 100%;
+  overflow-y: auto;
+  z-index: 10;
+  display: none;
+  height: 100vh;
+  top: 50px;
+  right: 0;
+  left: 0;
+  padding: 20px 30px 100px;
+  background-color: #fff;
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+  -webkit-transform: translateX(-2000px);
+  transform: translateX(-2000px);
+}
+
+/* End-Mob-Navigation */
+
+/* ======= Primary-Header - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* ======= Primary-Header - Tablet+ ======= */
+@media (min-width: 768px) {
+
+  /*Logo*/
+
+  .logo {
+    max-height: 60px;
+    margin: 22px 0; /*Change according to design*/
+  }
+
+  .logo img {
+    max-width: 200px;
+    max-height: 60px;
+  }
+  
+  .logo a,
+  .logo a > h1 {
+    /*If user does not provide logo, then the text of the  title of their site will go in the <a> element in place of the <img>, so be sure to style to a plain text (non-image) logo*/
+    font-size: 20px;
+  }
+
+  /* End Logo */
+
+}
+/* ======= Primary-Header - Desktop+ ======= */
+@media (min-width: 992px) {
+
+  /*Logo*/
+
+  .logo {
+    margin: 22px 0; /*Change according to design*/
+    max-height: 50px;
+  }
+  
+  .logo img {
+    max-width: 200px;
+    max-height: 50px;
+  }
+
+
+  .logo a,
+  .logo a > h1 {
+    /*If user does not provide logo, then the text of the  title of their site will go in the <a> element in place of the <img>, so be sure to style to a plain text (non-image) logo*/
+    font-size: 24px;
+  }
+
+  /* End Logo */
+
+}
+/* ======= Primary-Header - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+/*===============================
+    Banner
+  ===============================*/
+
+/* ======= Banner - Mobile+ ======= */
+
+.banner {
+  position: relative;
+  overflow: hidden;
+  min-height: 600px;
+}
+
+.banner-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 120px 26px 60px;
+}
+
+/* ======= Banner - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* ======= Banner - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* ======= Banner - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* ======= Banner - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+/*===============================
+     Primary Footer
+  ===============================*/
+
+/* ====Primary-Footer - Mobile+ ==== */
+
+.primary-footer {
+  padding: 36px 15px;
+  background-color: #3D3D3D;
+  color: #fff;
+}
+
+.primary-footer a {
+  color: #fff;
+}
+
+/* Footer Nav */
+
+.footer-nav {
+  -webkit-column-count: 2;
+          column-count: 2;
+}
+
+.footer-nav a {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer-nav a:hover {
+  opacity: .6;
+  -webkit-transition: color .5s, background-color .5s;
+  transition: color .5s, background-color .5s;
+}
+
+.footer-nav a:active {
+  opacity: .8;
+  color: #4F5265;
+  color: var(--primary-color-dark);
+}
+
+.footer-nav a:first-child {
+  padding-left: 0;
+}
+
+.footer-nav a:last-child {
+  padding-right: 0;
+}
+
+/* End Footer Nav */
+
+/* Address */
+
+.footer-address {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: .8;
+}
+
+/* End Address */
+
+/* Credit */
+
+
+.copy-credit {
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, .8);
+}
+
+.footer-bar {
+  padding: 0 5px;
+  display: none;
+}
+
+.credit {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+          align-items: center;
+}
+
+.credit > a {
+  color: #fff;
+  -webkit-transition: .25s;
+  -webkit-transition: opacity .25s;
+  transition: opacity .25s;
+  padding-top: 6px;
+  margin-left: 6px;
+}
+
+.credit > a:hover {
+  opacity: .8;
+  -webkit-transition: opacity .25s;
+  transition: opacity .25s;
+}
+
+svg.solasites-logo {
+  width: 110px;
+}
+
+.logo-sola, 
+.logo-sites {
+  fill: #fff;
+}
+
+.logo-icon-top, 
+.logo-icon-bottom {
+  fill: #fff;
+}
+
+.logo-sites, 
+.logo-icon-bottom {
+  opacity: .6;
+}
+/* End Credit */
+
+/* ====Primary-Footer - Tablet+ ==== */
+
+@media (min-width: 768px) {
+
+  .primary-footer {
+    padding: 42px 37px;
+  }
+  
+  /* Footer Nav */
+
+  .footer-nav a {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    font-size: 17px;
+    display: initial;
+    padding-right: 26px;
+  }
+  
+  /* End Footer Nav */
+  
+  /* Address */
+  
+  .footer-address {
+    font-size: 17px;
+  }
+  
+  /* End Address */
+  
+  /* Credit */
+
+  .footer-bar {
+    display: block;
+  }
+  
+  .copy-credit {
+    font-size: 15px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  /* End Credit */
+
+}
+
+/* ====Primary-Footer - Desktop+ ==== */
+
+@media (min-width: 992px) {
+
+  .primary-footer {
+    padding: 70px 55px;
+  }
+  
+  /* Footer Nav */
+  
+  .footer-nav a {
+    font-size: 18px;
+    padding-right: 56px;
+  }
+  
+  /* End Footer Nav */
+  
+  .footer-address,
+  .copy-credit {
+    font-size: 16px;
+  }
+
+}
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+/*===============================
+  ===============================
+  ===============================
+  ===============================
+  ===============================*/
+
+/*===============================
+    
+  ===============================*/
+
+/* =======  - Mobile+ ======= */
+/* =======  - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* =======  - Tablet+ ======= */
+@media (min-width: 768px) {}
+/* =======  - Desktop+ ======= */
+@media (min-width: 992px) {}
+/* =======  - Large Desktop+ ======= */
+@media (min-width: 1200px) {}

@@ -1,1 +1,0 @@
-Place any needed icon font file in this directory, then delete this .md file. If no icon font files are needed, delete the fonts directory as well.
