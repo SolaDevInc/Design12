@@ -16,7 +16,7 @@
 	<body>
 		<header class="main-header">
 			<div class="navigation">
-				<div class="primary-header">
+				<div class="primary-header container">
 					<!-- Featured-contact -->
 					<div class="featured-contact">
 						<a href="#">Online Giving</a>
@@ -33,7 +33,7 @@
 					<!-- End-Logo -->
 					<!--Mobile Nav Icon(Hamburger Icon)-->
 					<div class="mob-featured-btn">
-						<button class="search-btn mob-search-btn">
+						<button class="mob-search-btn">
 							<i class="icon-search"></i>
 						</button>
 						<button class="menu-icon">
@@ -45,38 +45,53 @@
 					<!--Mobile-Nav-->
 					<nav class="primary-nav-mobile">
 						<ul>
-							<li><a href="#" class="current">Home</a></li>
-							<li><a href="#">About</a>
+							<li><a class="current touch-effect" href="#">Home</a></li>
+							<li><a class="touch-effect" href="#">About</a>
 								<ul>
-									<li><a href="#">Who we are</a></li>
-									<li><a href="#">The Gospel</a></li>
-									<li><a href="#">Statement of faith</a></li>
-									<li><a href="#">Leadership</a></li>
-									<li><a href="#">Our Ministries</a></li>
+									<li><a class="touch-effect" href="#">Who we are</a></li>
+									<li><a class="touch-effect" href="#">The Gospel</a></li>
+									<li><a class="touch-effect" href="#">Statement of faith</a></li>
+									<li><a class="touch-effect" href="#">Leadership</a></li>
+									<li><a class="touch-effect" href="#">Our Ministries</a></li>
 								</ul>
 							</li>
-							<li><a href="#">Events</a></li>
-							<li><a href="#">Blog</a></li>
-							<li><a href="#">Sermons</a></li>
-							<li><a href="#">I'm New</a>
+							<li><a class="touch-effect" href="#">Events</a></li>
+							<li><a class="touch-effect" href="#">Blog</a></li>
+							<li><a class="touch-effect" href="#">Sermons</a></li>
+							<li><a class="touch-effect" href="#">I'm New</a>
 								<ul>
-									<li><a href="#">What to expect</a></li>
-									<li><a href="#">Plan Your Visit</a></li>
-									<li><a href="#">Service Times &amp; Direction</a></li>
+									<li><a class="touch-effect" href="#">What to expect</a></li>
+									<li><a class="touch-effect" href="#">Plan Your Visit</a></li>
+									<li><a class="touch-effect" href="#">Service Times &amp; Direction</a>
+										<ul>
+											<li><a class="touch-effect" href="#">What to expect</a></li>
+											<li><a class="touch-effect" href="#">Plan Your Visit</a></li>
+											<li><a class="touch-effect" href="#">Service Times &amp; Direction</a></li>
+										</ul>
+									</li>
 								</ul>
 							</li>
 						</ul>
+						<div class="mob-featured-nav">
+							<!-- Featured-contact -->
+							<div class="featured-contact">
+								<a href="#">Online Giving</a>
+								<a href="#">Contact Us</a>
+							</div>
+							<!-- End-Featured-Contact -->
+							<!--Direction-->
+							<a class="featured-direction touch-effect" href="#"><i class="icon-location"></i><span>Get Directions</span></a>
+							<!--End Direction-->
+						</div>
 					</nav>
 					<!--End Mobile-Nav-->
 					<!--Mobile Search-->
-					<div class="search mob-search">
-						<form role="search-form" method="get" class="search-form mob-search-form" action="website url>">
-							<button>
-								<i class="icon-search"></i>
-							</button>
+					<div class="mob-search">
+						<form role="search-form" method="get" class="mob-search-form" action="website url>">
+							<i class="icon-search"></i>
 							<input id="fullBar" type="search" name="s" placeholder="START TYPING" autocomplete="off" autofocus="">
 						</form>
-						<button class="search-close-btn">
+						<button class="mob-search-close-btn">
 							<i class="icon-close"></i>
 						</button>
 					</div>
@@ -85,7 +100,9 @@
 					<a class="featured-direction" href="#"><i class="icon-location"></i><span>Get Directions</span></a>
 					<!--End Direction-->
 				</div>
-				<div class="primary-nav">
+			</div>	
+			<div class="primary-desktop-nav">
+				<div class="primary-nav container">
 					<!--Desktop-Navigation-->
 					<nav class="primary-nav-desktop">
 						<ul>
@@ -133,12 +150,12 @@
 		<!-- Main-Body-->
 		<main>
 			<!-- Banner -->
-			<div class="banner background-image-wrapper big-container">
+			<div class="banner background-image-wrapper">
 				<!--Banner-Image-->
 				<img class="background-image" alt="Image Alt Text Here" srcset="" src="images/anthony-intraversato-455600-unsplash.jpg">
 				<!-- End-Banner-Image -->
 				<!--Welcome-Message-->
-				<div class="banner-content">
+				<div class="banner-content container big-container">
 					<p class="article-tag">We want you to know the love of God. And feel His presence near</p>
 					<p class="article-main">You're warmly welcomed to our church,we will love to see you there.</p>
 				</div>
