@@ -18,16 +18,29 @@ $(document).ready(function() {
 $(".menu-icon").click(function(){
   $(this).toggleClass("js-active");
   if($(this).hasClass('js-active')){
-    $(".primary-nav-mobile").addClass("js-open");
-    $(".navigation").addClass("js-active");
+    $(".primary-nav-mobile").toggleClass("js-active");
+    $(".main-header").toggleClass("js-active");
     //Adds Body so body not move 
     $("html, body").addClass("js-noscroll");
   } else {
     $(this).removeClass("js-active");
-    $(".primary-nav-mobile").removeClass("js-open");
-    $(".navigation").removeClass("js-active");
+    $(".primary-nav-mobile").removeClass("js-active");
+    $(".main-header").removeClass("js-active");
     //Adds Body so body not move 
     $("html, body").removeClass("js-noscroll");
+  } 
+});
+
+$(window).on("load resize",function(){
+  ///Check height of primary nav
+  if($(window).width() < 992) {
+    //Get height of resource type nav
+    var navHeight = $('.main-header').height();
+    var wpBarHeight = $('#wpadminbar').height();
+    var totalHeaderHeight = navHeight + wpBarHeight;
+    //Apply measurement to dropdown
+    $(".primary-nav-mobile").css("top", navHeight);
+    $(".primary-nav-mobile").css("top", totalHeaderHeight);
   }
 });
 
@@ -35,34 +48,31 @@ $(".menu-icon").click(function(){
 //Search 
 ///////////////////
 
-function toggleSearchBar() {
-	var btn = $(".search-btn");
-	
-	//Adds form type so CSS can change make it appear
-	$(".search").toggleClass("js-active");
-	$(".search-form").toggleClass("js-open");
-
-	if (btn.hasClass("js-active")) {
-		$("body").on("click", hideSearchBar);
-	}
-	else {
-		$("body").off("click", hideSearchBar);
-	}
-}
-
-function hideSearchBar(e) {
-	if ($(e.target).closest(".search").length > 0) {
-		return;
-	}
-	
-	toggleSearchBar();
-}
-
-$(".search-btn").click(toggleSearchBar);
+$(".mob-search-btn").click(function() {
+  $(".mob-search").toggleClass("js-active");
+  $(".menu-icon").removeClass("js-active");
+  $(".primary-nav-mobile").removeClass("js-active");
+  $(".main-header").removeClass("js-active");
+  //Adds Body so body not move 
+  $("html, body").removeClass("js-noscroll");
+});
 
 // Close search 
-$(".search-close-btn").click(function(){
+$(".mob-search-close-btn").click(function(){
 	//Remove search so jS can change make it disappear
-  $(".search").removeClass("js-active");
-	$(".search-form").removeClass("js-open");
+  $(".mob-search").removeClass("js-active");
+});
+
+///////////////////
+// Click away
+//////////////////
+
+var removeClassArray = ['.mob-search', '.book-download-btn', '.browse-language-btn', '.browse-resource-btn', '.browse-resources', '.browse-language'];
+$(document).mouseup(function(e) {
+  for (var i=0; i < removeClassArray.length; i++) {
+    var removeActiveClasses = $(removeClassArray[i]);
+    if (!removeActiveClasses.is(e.target) && removeActiveClasses.has(e.target).length == 0) {
+      $(removeActiveClasses).removeClass("js-active");
+    }
+  }
 });
