@@ -599,13 +599,13 @@ img.background-image {
   left: 0;
   padding: 20px 30px 100px;
   background-color: #fff;
-  transition: transform .5s;
+  transition: transform .25s delay 5s;
   -webkit-transform: translateX(-2000px);
   transform: translateX(-2000px);
-  -webkit-transition: transform .5s;
-  -moz-transition: transform .5s;
-  -ms-transition: transform .5s;
-  -o-transition: transform .5s;
+  -webkit-transition: transform .25s delay 5s;
+  -moz-transition: transform .25s delay 5s;
+  -ms-transition: transform .25s delay 5s;
+  -o-transition: transform .25s delay 5s;
 }
 
 .primary-nav-mobile.js-active {
@@ -662,7 +662,7 @@ img.background-image {
 .primary-nav-mobile > ul ul ul > li > a {
   font-size: 14px;
   text-transform: capitalize;
-  color: rgba(44, 44, 44, .9);
+  color: rgba(44, 44, 44, .7);
 }
 
 /* End-Mob-Navigation */
@@ -852,6 +852,7 @@ img.background-image {
   .main-header.js-active .mob-search-btn {
     display: block;
   }
+
   .menu-icon {
     width: 70px;
     padding: 25px;
@@ -948,9 +949,20 @@ img.background-image {
 
   /* End-Mob-Navigation */
 
+  /* Mob-Featured-Nav */
+
+  .featured-contact > a {
+    font-size: 16px;
+  }
+  /* End-Mob-Featured-Nav */
+  
 }
 /* ======= Primary-Header - Desktop+ ======= */
 @media (min-width: 992px) {
+
+  .primary-header {
+    padding: 0 50px;
+  }
 
   /*Logo*/
 
@@ -964,7 +976,6 @@ img.background-image {
     max-height: 50px;
   }
 
-
   .logo a,
   .logo a > h1 {
     /*If user does not provide logo, then the text of the  title of their site will go in the <a> element in place of the <img>, so be sure to style to a plain text (non-image) logo*/
@@ -972,6 +983,129 @@ img.background-image {
   }
 
   /* End Logo */
+
+  /* Mob-Featured-btn */
+
+  .mob-featured-btn {
+    display: none;
+  }
+
+  /* End-Mob-Featured-btn */
+
+  /* Mob-Search */
+
+  .mob-search {
+    display: none;
+  }
+
+  .mob-search-form > i {
+    font-size: 14px;
+    padding-top: 0px;
+  }
+
+  .mob-search-form input[type=search] {
+    font-size: 15px;
+  }
+
+  .mob-search-form input::-webkit-input-placeholder,
+  .mob-search-form input:-ms-input-placeholder,
+  .mob-search-form input::placeholder {
+    font-size: 15px;
+  }
+
+  .mob-search-close-btn {
+    font-size: 15px;
+  }
+
+  /* End-Mob-Search */
+
+  /* Mob-Navigation */
+
+  .primary-nav-mobile, 
+  .primary-nav-mobile.js-active::before,
+  .primary-nav-mobile.js-active {
+    display: none;
+  }
+
+  .primary-nav {
+    display: block;
+    height: 65px;
+  }
+
+  .primary-nav-desktop {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  .primary-nav-desktop > ul {
+    display: flex;
+  }
+
+  .primary-nav-desktop > ul a {
+    width: 100%;
+    display: block;
+    line-height: 1.4;
+    font-weight: 600;
+    color: #fff;
+    transition: color .25s;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  .primary-nav-desktop > ul a:hover,
+  .primary-nav-desktop > ul a:active,
+  .primary-nav-desktop > ul a.js-touch{
+    color: #69B227;
+    color: var(--primary-color-regular);
+  }
+
+  .primary-nav-desktop > ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+  }
+
+  .primary-nav-desktop > ul > li > a {
+    padding: 0px 25px;
+    font-size: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .primary-nav-desktop > ul > li:first-child > a {
+    padding-left: 0;
+  }
+
+  .primary-nav-desktop > ul ul,
+  .primary-nav-desktop > ul ul ul {
+    display: none;
+  }
+
+  .primary-nav-mobile > ul ul > li > a {
+    font-size: 18px;
+  }
+
+  .primary-nav-mobile > ul ul ul > li > a {
+    font-size: 16px;
+  }
+
+  /* End-Mob-Navigation */
+
+  /* Mob-Featured-Nav */
+
+  .featured-contact > a {
+    font-size: 16px;
+  }
+  /* End-Mob-Featured-Nav */
+
+  
 
 }
 /* ======= Primary-Header - Large Desktop+ ======= */
