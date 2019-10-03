@@ -15,21 +15,44 @@ $(document).ready(function() {
 //Mobile Menu
 ///////////////////
 
-$(".menu-icon").click(function(){
-  $(this).toggleClass("js-active");
-  if($(this).hasClass('js-active')){
-    $(".primary-nav-mobile").toggleClass("js-active");
-    $(".main-header").toggleClass("js-active");
-    //Adds Body so body not move 
-    $("html, body").addClass("js-noscroll");
-  } else {
-    $(this).removeClass("js-active");
-    $(".primary-nav-mobile").removeClass("js-active");
-    $(".main-header").removeClass("js-active");
-    //Adds Body so body not move 
-    $("html, body").removeClass("js-noscroll");
-  } 
+function toggleMenu() {
+	var menubtn = $(".menu-icon");
+	menubtn.toggleClass("js-active");
+	
+	//Adds form type so CSS can change make it appear
+	$(".primary-nav-mobile").toggleClass("js-active");
+  $(".main-header").toggleClass("js-active");
+  //Adds Body so body not move 
+  $("html, body").toggleClass("js-noscroll");
+
+	if (menubtn.hasClass("js-active")) {
+		$("body").on("click", hideMenu);
+	}
+	else {
+		$("body").off("click", hideMenu);
+	}
+}
+
+function hideMenu(e) {
+	if ($(e.target).closest(".menu-icon").length > 0) {
+		return;
+  } else if ($(e.target).closest(".primary-nav-mobile").length > 0) {
+		return;
+  }
+  
+	toggleMenu();
+}
+
+$(".menu-icon").click(toggleMenu);
+
+$(".menu-icon.js-active").click(function(){
+  $(this).removeClass("js-active");
+  $(".primary-nav-mobile").removeClass("js-active");
+  $(".main-header").removeClass("js-active");
+  //Adds Body so body not move 
+  $("html, body").removeClass("js-noscroll");
 });
+
 
 $(window).on("load resize",function(){
   ///Check height of primary nav
@@ -48,6 +71,8 @@ $(window).on("load resize",function(){
 //Search 
 ///////////////////
 
+// Mob Search
+
 $(".mob-search-btn").click(function() {
   $(".mob-search").toggleClass("js-active");
   $(".menu-icon").removeClass("js-active");
@@ -61,6 +86,68 @@ $(".mob-search-btn").click(function() {
 $(".mob-search-close-btn").click(function(){
 	//Remove search so jS can change make it disappear
   $(".mob-search").removeClass("js-active");
+});
+
+// Desktop Search
+function toggleSearchBar() {
+	var btn = $(".search-close-btn");
+	btn.toggleClass("js-active");
+	
+	//Adds form type so CSS can change make it appear
+	$(".search").toggleClass("js-active");
+	$(".search-form").toggleClass("js-active");
+
+	if (btn.hasClass("js-active")) {
+		$("body").on("click", hideSearchBar);
+	}
+	else {
+		$("body").off("click", hideSearchBar);
+	}
+}
+
+function hideSearchBar(e) {
+	if ($(e.target).closest(".search").length > 0) {
+		return;
+	}
+	
+	toggleSearchBar();
+}
+
+$(".search-close-btn").click(toggleSearchBar);
+
+$(".search-close-btn.js-active").click(function() {
+  $(this).removeClass("js-active");
+  $(".search").removeClass("js-active");
+	$(".search-form").removeClass("js-active");
+});
+
+////////////////
+// Slick-slider
+////////////////
+
+// Banner-Featured
+
+$('.banner-featured-slider').slick({
+  arrows: false,
+  pauseOnFocus: false,
+	pauseOnHover: false,
+  accessibility: false,
+  responsive: [
+    {
+      breakpoint: 9999,
+      settings: "unslick"
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        infinite: false,
+        dots: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dotsClass: 'slick-dots featured-dots',
+      }
+    }
+  ]
 });
 
 ///////////////////
