@@ -129,6 +129,9 @@ $(".search-close-btn.js-active").click(function() {
 
 $('.banner-featured-slider').slick({
   arrows: false,
+  autoplay: true,
+  infinite: true,
+  autoplaySpeed: 1800,
   pauseOnFocus: false,
 	pauseOnHover: false,
   accessibility: false,
@@ -138,9 +141,8 @@ $('.banner-featured-slider').slick({
       settings: "unslick"
     },
     {
-      breakpoint: 768,
+      breakpoint: 992,
       settings: {
-        infinite: false,
         dots: true,
         slidesToShow: 1,
         slidesToScroll: 1,
