@@ -152,6 +152,57 @@ $('.banner-featured-slider').slick({
   ]
 });
 
+//////////////////////////////
+// Sidebar Dropdown
+/////////////////////////////
+
+//Add dropdown arrow to all li items have Ul subitems
+
+var subMenuItems = $( ".sidebar-nav > ul > li:has(ul)" );
+var dropdownArrow = $('<button><i class="icon-triangle-right"></i></button>');
+
+$(subMenuItems).append(dropdownArrow);
+
+/////////////////////////
+// Pull quotes
+////////////////////////
+
+//Variables
+var pageUrl = encodeURIComponent(document.URL);
+var pageTitle = encodeURIComponent($(".page-title").text());
+var blockPullquote = $(".wp-block-pullquote > blockquote");
+
+//Add Share Buttons to Blockquote in DOM
+var shareLink = $('<div class="pullquote-share"><a href="#" class="tweet-Share"><i class="icon-twitter"></i></a><a href="#" class="facebook-share"><i class="icon-facebook1"></i></a></div>');
+$(blockPullquote).append(shareLink); 
+
+//Popup Window
+function socialWindow(url) {
+  var left = (screen.width - 570) / 2;
+  var top = (screen.height - 570) / 2;
+  var params = "menubar=no,toolbar=no,status=no,width=570,height=570,top=" + top + ",left=" + left;
+  // Setting 'params' to an empty string will launch
+  // content in a new tab or window rather than a pop-up.
+  // params = "";
+  window.open(url,"NewWindow",params);
+}
+
+//Defining Content for Social Sharing	For Pullquotes
+//Click-Function
+
+jQuery(".facebook-share").on("click", function() {
+  var blockquoteText = encodeURIComponent($(this).parent().siblings(".wp-block-pullquote > blockquote > p").text());
+  url = "https://m.facebook.com/sharer.php?u=" + pageUrl + "&quote=" + blockquoteText;
+  socialWindow(url);
+});
+
+jQuery(".tweet-Share").on("click", function() {
+  var blockquoteText = encodeURIComponent($(this).parent().siblings(".wp-block-pullquote > blockquote > p").text());
+  url = "https://twitter.com/intent/tweet?text=" + pageUrl + ' ' + blockquoteText;
+  socialWindow(url);
+});
+
+
 ///////////////////
 // Click away
 //////////////////
