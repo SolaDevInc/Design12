@@ -14,10 +14,10 @@
 		<link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i,700&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300i,400,400i,600,600i,700&display=swap" rel="stylesheet">
 	</head>
-	<body>
+	<body class="home">
 		<header class="main-header">
-			<div class="navigation">
-				<div class="primary-header container">
+			<div class="primary-header">
+				<div class="navigation container">
 					<!-- Featured-contact -->
 					<div class="featured-contact">
 						<a href="#">Online Giving</a>
@@ -27,8 +27,9 @@
 					<!--Logo-->
 					<div class="logo">
 						<a href="#">
-							<!-- <img class="make-background" alt="Image Alt Text Here" src="images/logo2x.png"> -->
-							<h1>Village Church</h1>
+							<img class="light-logo" alt="Image Alt Text Here" src="images/gav-church-light@2x.png">
+							<img class="dark-logo" alt="Image Alt Text Here" src="images/gav-church-dark@2x.png">
+							<!-- <h1>Gaon Church</h1> -->
 						</a> 
 					</div>
 					<!-- End-Logo -->
@@ -102,28 +103,33 @@
 					<!--End Direction-->
 				</div>
 			</div>	
-			<div class="primary-nav container">
+			<div class="secondary-header container">
 				<!--Desktop-Navigation-->
 				<nav class="primary-nav-desktop">
 					<ul>
-						<li><a href="#" class="current">Home</a></li>
-						<li><a href="#">About</a>
+						<li><a class="current" href="#">Home</a></li>
+						<li><a class="touch-effect" href="#">About</a>
 							<ul>
-								<li><a href="#">Who we are</a></li>
-								<li><a href="#">The Gospel</a></li>
-								<li><a href="#">Statement of faith</a></li>
-								<li><a href="#">Leadership</a></li>
-								<li><a href="#">Our Ministries</a></li>
+								<li><a class="touch-effect" href="#">Who we are</a></li>
+								<li><a class="touch-effect" href="#">The Gospel</a></li>
+								<li><a class="touch-effect" href="#">Statement of faith</a></li>
+								<li><a class="touch-effect" href="#">Leadership</a>
+									<ul>
+										<li><a class="touch-effect" href="#">Deacans</a></li>
+										<li><a class="touch-effect" href="#">Elders</a></li>
+									</ul>
+								</li>
+								<li><a class="touch-effect" href="#">Our Ministries</a></li>
 							</ul>
 						</li>
-						<li><a href="#">Events</a></li>
-						<li><a href="#">Blog</a></li>
-						<li><a href="#">Sermons</a></li>
-						<li><a href="#">I'm New</a>
+						<li><a class="touch-effect" href="#">Events</a></li>
+						<li><a class="touch-effect" href="#">Blog</a></li>
+						<li><a class="touch-effect" href="#">Sermons</a></li>
+						<li><a class="touch-effect" href="#">I'm New</a>
 							<ul>
-								<li><a href="#">What to expect</a></li>
-								<li><a href="#">Plan Your Visit</a></li>
-								<li><a href="#">Service Times &amp; Direction</a></li>
+								<li><a class="touch-effect" href="#">What to expect</a></li>
+								<li><a class="touch-effect" href="#">Plan Your Visit</a></li>
+								<li><a class="touch-effect" href="#">Service Times &amp; Direction</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -153,7 +159,7 @@
 				<!--Banner-Image-->
 				<img class="background-image" alt="Image Alt Text Here" srcset="" src="images/anthony-intraversato-455600-unsplash.jpg">
 				<!-- End-Banner-Image -->
-				<!--Welcome-Message-->
+				<!-- Banner-Content -->
 				<div class="banner-content container">
 					<span class="article-label">Helping the people to know Jesus Christ, Grow in Faith</span>
 					<h1>Go into the world equipped to serve.</h1>
@@ -167,7 +173,7 @@
 						</article>
 						<article>
 							<span class="article-label">Where</span>
-							<p>Village Church 7892 Marnul Avenue, La Jolla CA 92037</p>
+							<p>Gaon Church 7892 Marnul Avenue, La Jolla CA 92037</p>
 						</article>
 						<article>
 							<span class="article-label">Connect</span>
@@ -175,24 +181,24 @@
 						</article>
 					</div>
 				</div>
-				<!--End Welcome-->
+				<!-- End-Banner-Content -->
 				<div class="banner-gradient"></div>
 			</section>
 			<!-- End-Banner -->
 			<!-- Featured-Welcome -->
-			<section class="featured-welcome">
+			<section class="welcome">
 				<div class="container">
-					<div class="welcome-content">
-						<h1>Why Village Church?</h1>
+					<header>
+						<h1>Why Gaon Church?</h1>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum suscipit augue sit amet ultrices efficitur. Duis a tincidunt dolor, vitae mattis lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-					</div>
-					<div class="welcome">
+					</header>
+					<div class="welcome-content">
 						<div class="background-label">
 							<span>Christ</span>
 							<span>Saves</span>
 							<span>Dead</span>
 						</div>
-						<div class="welcome-features">
+						<div class="welcome-posts">
 							<article>
 								<div class="background-image-wrapper scale">
 									<img class="background-image" alt="" sizes="" srcset="" src="images/deep-waters.jpg">
@@ -234,9 +240,9 @@
 			</section>
 			<!-- End-Featured-Welcome -->
 			<!-- Featured-Series -->
-			<section class="featured-series background-image-wrapper">
+			<section class="featured-posts background-image-wrapper">
 				<img class="background-image" alt="" sizes="" srcset="" src="images/series-img.jpg">
-				<div class="featured-series-content">
+				<div class="featured-posts-content">
 					<span class="article-label">Featured Series</span>
 					<h1>Evidence and Assurance of Salvation</h1>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum suscipit augue sit amet ultrices efficitur. Duis a tincidunt dolor, vitae mattis lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam aliquet elementum iaculis.</p>
@@ -245,6 +251,61 @@
 				<div class="color-overlay"></div>
 			</section>
 			<!-- End-Featured-Series -->
+			<!-- Featurd-Author -->
+			<section class="featured-author">
+				<h1>Twitter</h1>
+				<div class="featured-author-content">
+					<h1><span>Brian Barnett Tweeted</span></h1>
+					<p>Arcu erat, accumsan id imperdiet et, porttitor at sem. Sed porttitor lectus nibh. Proin eget tortor risus. Nulla porttitor accumsan tincidunt. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Cras ultricies ligula sed magna dictum porta.</p>
+					<div class="featured-author-tag">
+						<a class="touch-effect">Aug 6, 2019</a>
+						<a class="touch-effect" href="#">@brain_barnett</a>
+						<a class="touch-effect" href="#"><i class="icon-twitter"></i>Follow</a>
+					</div>
+				</div>
+			</section>
+			<!-- End-Featurd-Author -->
+			<!-- Featured-Instagram -->
+			<section class="featured-instagram">
+				<div class="container">
+					<div class="featured-instagram-info">
+						<h1>Instagram</h1>
+						<div class="instagram-logo">
+							<img alt="Image Alt Text Here" src="images/gav-church-dark@2x.png">
+							<!-- <h1>Gaon Church</h1> -->
+						</div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum suscipit augue sit amet ultrices efficitur. Duis a tincidunt dolor, vitae mattis lacus.</p>
+						<button class="touch-effect" ><i class="icon-instagram"></i><span>Follow</span></button>
+					</div>
+					<div class="instagram-images">
+						<div class="background-image-wrapper scale">
+							<img class="background-image" alt="" sizes="" srcset="" src="images/lightstock_360486_full_corey.jpg">
+							<a class="cover-link" href="#"><span class="sr-only"></span></a>
+						</div>
+						<div class="background-image-wrapper scale">
+							<img class="background-image" alt="" sizes="" srcset="" src="images/lightstock_9748_full_corey.jpg">
+							<a class="cover-link" href="#"><span class="sr-only"></span></a>
+						</div>
+						<div class="background-image-wrapper scale">
+							<img class="background-image" alt="" sizes="" srcset="" src="images/lightstock_115092_full_corey.jpg">
+							<a class="cover-link" href="#"><span class="sr-only"></span></a>
+						</div>
+						<div class="background-image-wrapper scale">
+							<img class="background-image" alt="" sizes="" srcset="" src="images/lightstock_163431_full_corey.jpg">
+							<a class="cover-link" href="#"><span class="sr-only"></span></a>
+						</div>
+						<div class="background-image-wrapper scale">
+							<img class="background-image" alt="" sizes="" srcset="" src="images/lightstock_201592_full_corey.jpg">
+							<a class="cover-link" href="#"><span class="sr-only"></span></a>
+						</div>
+						<div class="background-image-wrapper scale">
+							<img class="background-image" alt="" sizes="" srcset="" src="images/lightstock_166543_full_corey.jpg">
+							<a class="cover-link" href="#"><span class="sr-only"></span></a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End-Featured-Instagram -->
 		</main>
 		<!-- End-Main-Body-->
 		<!-- Footer -->
@@ -253,8 +314,8 @@
 				<!--Footer-Logo-->
 				<div class="footer-logo logo">
 					<a href="#">
-						<!-- <img class="make-background" alt="Image Alt Text Here" src="images/logo2x.png"> -->
-						<h1>Village Church</h1>
+						<img alt="Image Alt Text Here" src="images/gav-church-light@2x.png">
+						<!-- <h1>Gaon Church</h1> -->
 					</a> 
 				</div>
 				<!-- End-Footer-Logo -->
@@ -267,7 +328,7 @@
 				<!-- End-Footer-Share -->
 				<!-- Copy-Credit -->
 				<div class="copy-credit">
-					<span class="copy">© 2017 Village Church. All Rights Reserved.</span> 
+					<span class="copy">© 2017 Gaon Church. All Rights Reserved.</span> 
 					<span class="footer-bar">|</span>
 					<span class="credit">Powered by <a class="touch-effect" href="https://solasites.com" target="_blank">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 109.863 17.073" class="solasites-logo">
