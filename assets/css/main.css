@@ -2335,11 +2335,11 @@ img.background-image {
 
 /* ======= Featured-Series - Mobile+ ======= */
 
-.featured-posts {
+.featured-section {
   padding: 60px 40px;
 }
 
-.featured-posts-content {
+.featured-section-content {
   max-width: 240px;
   margin: 0 auto;
   padding: 75px 35px;
@@ -2347,7 +2347,7 @@ img.background-image {
   border: 8px solid rgba(255, 255, 255, .15);
 }
 
-.featured-posts-content > span {
+.featured-section-content > span {
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -2355,7 +2355,7 @@ img.background-image {
   color: var(--primary-color-regular);
 }
 
-.featured-posts-content > h1 {
+.featured-section-content > h1 {
   font-size: 26px;
   font-weight: 700;
   color: #fff;
@@ -2363,14 +2363,14 @@ img.background-image {
   margin: 5px 0;
 }
 
-.featured-posts-content > p {
+.featured-section-content > p {
   font-size: 16px;
   line-height: 1.6;
   margin: 30px -70px;
   color: rgba(255, 255, 255, .8);
 }
 
-.featured-posts-content > a {
+.featured-section-content > a {
   color: #fff;
   padding-bottom: 2px;
   border-bottom: 2px solid #77AF44;
@@ -2382,23 +2382,23 @@ img.background-image {
   -o-transition: color .25s;
 }
 
-.featured-posts-content > a:hover,
-.featured-posts-content > a:focus,
-.featured-posts-content > a.js-touch,
-.featured-posts-content > a:hover > span,
-.featured-posts-content > a:focus > span ,
-.featured-posts-content > a.js-touch > span {
+.featured-section-content > a:hover,
+.featured-section-content > a:focus,
+.featured-section-content > a.js-touch,
+.featured-section-content > a:hover > span,
+.featured-section-content > a:focus > span ,
+.featured-section-content > a.js-touch > span {
   color: #69B227;
   color: var(--primary-color-light);
 }
 
-.featured-posts-content > a:active,
-.featured-posts-content > a:active > span  {
+.featured-section-content > a:active,
+.featured-section-content > a:active > span  {
   color: #659B34;
   color: var(--primary-color-dark);
 }
 
-.featured-posts-content > a > span {
+.featured-section-content > a > span {
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -2409,7 +2409,7 @@ img.background-image {
   -o-transition: color .25s;
 }
 
-.featured-posts-content > a > i {
+.featured-section-content > a > i {
   font-size: 7px;
   margin-left: 5px;
 }
@@ -2420,24 +2420,24 @@ img.background-image {
 
 @media (min-width: 768px) {
 
-  .featured-posts {
+  .featured-section {
     padding: 90px 0;
   }
   
-  .featured-posts-content {
+  .featured-section-content {
     max-width: 280px;
     border: 14px solid rgba(255, 255, 255, .15);
   }
 
-  .featured-posts-content > h1 {
+  .featured-section-content > h1 {
     font-size: 30px;
   }
   
-  .featured-posts-content > p {
+  .featured-section-content > p {
     margin: 15px -180px;
   }
   
-  .featured-posts-content > a > i {
+  .featured-section-content > a > i {
     font-size: 10px;
   }
 
