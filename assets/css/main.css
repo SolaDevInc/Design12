@@ -389,25 +389,35 @@ img.background-image {
 
 /* ======= Primary-Header - Mobile+ ======= */
 
-.main-header {
-  position: relative;
-  width: 100%;
-  height: 60px;
-  z-index: 500;
-  background-color: #F6F6F6;
+main {
+  margin-top: 60px;
 }
 
-.home .main-header {
-  position: absolute;
+.home main {
+  margin-top: 0;
+}
+
+.main-header {
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 500;
+  background-color: #F6F6F6;
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.16);
+  -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.16);
+  box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.16);
+}
+
+.home .main-header {
   background-color: initial;
+  box-shadow: initial;
 }
 
 .main-header.js-active {
-  position: fixed;
   background-color: #fff;
 }
 
@@ -427,9 +437,6 @@ img.background-image {
   width: 100%;
   height: 100%;
   position: relative;
-  -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.16);
-  -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.16);
-  box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.16);
 }
 
 .home .primary-header {
@@ -871,6 +878,10 @@ img.background-image {
 /* ======= Primary-Header - Tablet+ ======= */
 @media (min-width: 768px) {
 
+  main {
+    margin-top: 65px;
+  }
+
   .main-header {
     height: 65px;
   }
@@ -1090,15 +1101,29 @@ img.background-image {
   /* End-Mob-Featured-Nav */
   
 }
+
 /* ======= Primary-Header - Desktop+ ======= */
 @media (min-width: 992px) {
 
+  main {
+    margin-top: 0;
+  }
+
   .main-header {
-    height: 130px;
+    height: 100%;
+    position: relative;
+  }
+
+  .home .main-header {
+    position: absolute;
+  }
+
+  .page .main-header {
+    box-shadow: initial;
   }
 
   .primary-header {
-    height: 65px;
+    height: 75px;
     border-bottom: 1px solid rgba(34, 34, 34, .09);
     box-shadow: initial;
   }
@@ -1291,18 +1316,20 @@ img.background-image {
 
   .secondary-header {
     display: block;
-    height: 65px;
+    height: 75px;
   }
 
   .primary-nav-desktop {
     width: 100%;
     height: 100%;
     display: flex;
+    align-items: center;
     justify-content: space-between;
   }
 
   .primary-nav-desktop > ul {
     display: flex;
+    align-self: stretch;
   }
 
   .primary-nav-desktop > ul a {
@@ -1366,7 +1393,7 @@ img.background-image {
     position: absolute;
     width: 0;
     height: 3px;
-    bottom: 22%;
+    bottom: 30%;
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
@@ -4869,43 +4896,136 @@ svg.solasites-logo {
 
 /*===============================
   ===============================
-  ===============================
+    Archive Page
   ===============================
   ===============================*/
 
 /*===============================
-    
+    Archive-Sermon
   ===============================*/
 
-/* =======  - Mobile+ ======= */
-/* =======  - Large Mobile+ ======= */
+/* ======= Archive-Sermon - Mobile+ ======= */
+
+.featured-container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.featured-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.featured-header > h1 {
+  font-size: 24px;
+  margin: 0;
+  line-height: 1.4;
+  color: rgba(34, 34, 34, .9);
+}
+
+.featured-header > button {
+  font-size: 12px;
+  color: #222222;
+  font-weight: 600;
+  min-height: 32px;
+  min-width: 104px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  letter-spacing: .5px;
+  margin-left: 20px;
+  text-transform: uppercase;
+  background-color: #F0F0F0;
+  font-family: 'Source Sans Pro', sans-serif;
+  -webkit-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.16);
+  -moz-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.16);
+  box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.16);
+  transition: color .25s;
+  -webkit-transition: color .25s;
+  -moz-transition: color .25s;
+  -ms-transition: color .25s;
+  -o-transition: color .25s;
+}
+
+.featured-header > button > i {
+  font-size: 10px;
+  margin-left: 10px;
+  margin-bottom: -2px;
+}
+
+.featured-header > button:hover,
+.featured-header > button:focus,
+.featured-header > button.js-touch {
+  color: #77AF44;
+  color: var(--primary-color-regular);
+}
+
+.featured-header > button:active {
+  color: #659B34;
+  color: var(--primary-color-dark);
+}
+
+.resource-type {
+  top: 50px;
+  z-index: 5;
+  position: absolute;
+  /* max-height: 0; */
+  padding: 20px 25px;
+  /* overflow: hidden; */
+  background-color: #F0F0F0;
+  -webkit-box-shadow: 1px 2px 6px 0px rgba(0,0,0,0.16);
+  -moz-box-shadow: 1px 2px 6px 0px rgba(0,0,0,0.16);
+  box-shadow: 1px 2px 6px 0px rgba(0,0,0,0.16);
+  transition: max-height ease-in-out .5s;
+  -webkit-transition: max-height ease-in-out .5s;
+  -moz-transition: max-height ease-in-out .5s;
+  -ms-transition: max-height ease-in-out .5s;
+  -o-transition: max-height ease-in-out .5s;
+}
+
+.resource-type > div {
+  margin-bottom: 25px;
+}
+
+.resource-type > div:last-child {
+  margin-bottom: 0;
+}
+
+.resource-type > div > h1 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: rgba(34, 34, 34, .9);
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+/* ======= Archive-Sermon - Large Mobile+ ======= */
 @media (min-width: 480px) {}
-/* =======  - Tablet+ ======= */
+/* ======= Archive-Sermon - Tablet+ ======= */
 @media (min-width: 768px) {}
-/* =======  - Desktop+ ======= */
+/* ======= Archive-Sermon - Desktop+ ======= */
 @media (min-width: 992px) {}
-/* =======  - Large Desktop+ ======= */
+/* ======= Archive-Sermon - Large Desktop+ ======= */
 @media (min-width: 1200px) {}
 
 
 /*===============================
-  ===============================
-  ===============================
-  ===============================
+    Archive-Blog
   ===============================*/
 
-/*===============================
-    
-  ===============================*/
-
-/* =======  - Mobile+ ======= */
-/* =======  - Large Mobile+ ======= */
+/* ======= Archive-Blog - Mobile+ ======= */
+/* ======= Archive-Blog - Large Mobile+ ======= */
 @media (min-width: 480px) {}
-/* =======  - Tablet+ ======= */
+/* ======= Archive-Blog - Tablet+ ======= */
 @media (min-width: 768px) {}
-/* =======  - Desktop+ ======= */
+/* ======= Archive-Blog - Desktop+ ======= */
 @media (min-width: 992px) {}
-/* =======  - Large Desktop+ ======= */
+/* ======= Archive-Blog - Large Desktop+ ======= */
 @media (min-width: 1200px) {}
 
 
