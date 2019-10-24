@@ -202,12 +202,19 @@ jQuery(".tweet-Share").on("click", function() {
   socialWindow(url);
 });
 
+//////////////////////////////
+// Browse Dropdown
+/////////////////////////////
+
+$(".browse-dropdown").on('click', function() {
+  $(this).toggleClass("js-active");
+});
 
 ///////////////////
 // Click away
 //////////////////
 
-var removeClassArray = ['.mob-search', '.book-download-btn', '.browse-language-btn', '.browse-resource-btn', '.browse-resources', '.browse-language'];
+var removeClassArray = ['.mob-search', '.browse-dropdown', '.browse-language-btn', '.browse-resource-btn', '.browse-resources', '.browse-language'];
 $(document).mouseup(function(e) {
   for (var i=0; i < removeClassArray.length; i++) {
     var removeActiveClasses = $(removeClassArray[i]);
