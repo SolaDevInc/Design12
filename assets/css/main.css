@@ -284,8 +284,9 @@ img.background-image {
 .article-label {
   font-size: 11px;
   color: #ffffff;
-  letter-spacing: 3px;
   line-height: 1.6;
+  letter-spacing: 2px;
+  font-weight: 700;
   text-transform: uppercase;
   font-family: 'Source Sans Pro', sans-serif;
 }
@@ -398,7 +399,7 @@ main {
 }
 
 .main-header {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   left: 0;
@@ -418,6 +419,7 @@ main {
 }
 
 .main-header.js-active {
+  position: fixed;
   background-color: #fff;
 }
 
@@ -1575,7 +1577,7 @@ main {
 
 .banner-content > .article-label {
   font-size: 12px;
-  letter-spacing: 2px;
+  font-weight: 400;
   text-shadow: 0px 3px 6px rgba(0,0,0,0.16);
 }
 
@@ -1651,6 +1653,7 @@ main {
 
 .banner-featured-slider article > .article-label {
   opacity: .6;
+  font-weight: 400;
 }
 
 .banner-featured-slider article > p {
@@ -2026,8 +2029,6 @@ main {
 }
 
 .welcome-visit > span {
-  font-weight: 700;
-  letter-spacing: .77px;
   color: #77AF44;
   color: var(--primary-color-regular);
 }
@@ -2376,8 +2377,6 @@ main {
 
 .featured-section-content > span {
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1px;
   color: #77AF44;
   color: var(--primary-color-regular);
 }
@@ -3157,8 +3156,8 @@ svg.solasites-logo {
 }
 
 .single-page-banner > div > span {
-  font-weight: 700;
   font-size: 11px;
+  letter-spacing: 2px;
   color: #69B227;
   color: var(--primary-color-light);
 }
@@ -4901,14 +4900,15 @@ svg.solasites-logo {
   ===============================*/
 
 /*===============================
-    Archive-Sermon
+    Archive-Post
   ===============================*/
 
-/* ======= Archive-Sermon - Mobile+ ======= */
+/* ======= Archive-Post - Mobile+ ======= */
+
+/* Featured-Header */
 
 .featured-container {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding: 30px 15px;
 }
 
 .featured-header {
@@ -4920,12 +4920,12 @@ svg.solasites-logo {
 
 .featured-header > h1 {
   font-size: 24px;
-  margin: 0;
+  margin: 0 auto 0 0;
   line-height: 1.4;
   color: rgba(34, 34, 34, .9);
 }
 
-.featured-header > button {
+.browse-dropdown {
   font-size: 12px;
   color: #222222;
   font-weight: 600;
@@ -4947,53 +4947,86 @@ svg.solasites-logo {
   -moz-transition: color .25s;
   -ms-transition: color .25s;
   -o-transition: color .25s;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
-.featured-header > button > i {
+.browse-dropdown > i {
   font-size: 10px;
   margin-left: 10px;
   margin-bottom: -2px;
+  transition: transform .25s;
+  -webkit-transition: transform .25s;
+  -moz-transition: transform .25s;
+  -ms-transition: transform .25s;
+  -o-transition: transform .25s;
 }
 
-.featured-header > button:hover,
-.featured-header > button:focus,
-.featured-header > button.js-touch {
+.browse-dropdown.js-active > i {
+  transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+}
+
+.browse-dropdown:hover,
+.browse-dropdown:focus,
+.browse-dropdown.js-touch {
   color: #77AF44;
   color: var(--primary-color-regular);
 }
 
-.featured-header > button:active {
+.browse-dropdown:active {
   color: #659B34;
   color: var(--primary-color-dark);
 }
 
-.resource-type {
-  top: 50px;
+.resources {
+  top: 45px;
+  right: 0;
+  left: 0;
   z-index: 5;
   position: absolute;
-  /* max-height: 0; */
+  max-height: 0;
   padding: 20px 25px;
-  /* overflow: hidden; */
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
   background-color: #F0F0F0;
   -webkit-box-shadow: 1px 2px 6px 0px rgba(0,0,0,0.16);
   -moz-box-shadow: 1px 2px 6px 0px rgba(0,0,0,0.16);
   box-shadow: 1px 2px 6px 0px rgba(0,0,0,0.16);
-  transition: max-height ease-in-out .5s;
-  -webkit-transition: max-height ease-in-out .5s;
-  -moz-transition: max-height ease-in-out .5s;
-  -ms-transition: max-height ease-in-out .5s;
-  -o-transition: max-height ease-in-out .5s;
+  transition: max-height ease-in-out .75s;
+  -webkit-transition: max-height ease-in-out .75s;
+  -moz-transition: max-height ease-in-out .75s;
+  -ms-transition: max-height ease-in-out .75s;
+  -o-transition: max-height ease-in-out .75s;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
-.resource-type > div {
+.browse-dropdown.js-active ~ .resources {
+  max-height: 2000px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.resources > div {
   margin-bottom: 25px;
 }
 
-.resource-type > div:last-child {
+.resources > div:last-child {
   margin-bottom: 0;
 }
 
-.resource-type > div > h1 {
+.resources > div > h1 {
   font-size: 16px;
   margin: 0;
   font-weight: 700;
@@ -5003,14 +5036,532 @@ svg.solasites-logo {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+.resources > div > ul {
+  margin-top: 5px;
+}
 
-/* ======= Archive-Sermon - Large Mobile+ ======= */
+.resources > div > ul a {
+  font-size: 14px;
+  line-height: 1.3;
+  padding: 5px 0;
+  display: block;
+  color: rgba(34, 34, 34, .7);
+  font-family: 'Source Sans Pro', sans-serif;
+  transition: color .25s;
+  -webkit-transition: color .25s;
+  -moz-transition: color .25s;
+  -ms-transition: color .25s;
+  -o-transition: color .25s;
+}
+
+.resources > div > ul > li > ul,
+.index > ul > li > a:last-child {
+  display: none;
+}
+
+.resources > div > ul a:hover,
+.resources > div > ul a:focus,
+.resources > div > ul a.js-touch {
+  color: #77AF44;
+  color: var(--primary-color-regular);
+}
+
+.resources > div > ul a:active {
+  color: #659B34;
+  color: var(--primary-color-dark);
+}
+
+/* End-Featured-Header */
+
+/* Featured-Archive */
+
+.featured-archive {
+  padding: 30px 0;
+}
+
+/* End-Featured-Archive */
+
+/* ======= Archive-Post - Large Mobile+ ======= */
+
 @media (min-width: 480px) {}
-/* ======= Archive-Sermon - Tablet+ ======= */
+
+/* ======= Archive-Post - Tablet+ ======= */
+
+@media (min-width: 768px) {
+
+  /* Featured-Header */
+
+  .featured-container {
+    padding: 60px 40px;
+  }
+  
+  .featured-header > h1 {
+    font-size: 32px;
+  }
+  
+  .browse-dropdown {
+    margin-left: 30px;
+  }
+
+  .resources {
+    top: 80px;
+    padding: 30px;
+  }
+  
+  .resources > div > h1 {
+    font-size: 18px;
+    color: rgba(34, 34, 34, .5);
+  }
+  
+  .resources > div > ul {
+    display: flex;
+  }
+
+  .resources > div > ul > li {
+    flex-basis: 20%;
+    padding-right: 20px;
+  }
+
+  .resources > div.index > ul > li {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+
+  .index > ul > li:last-child {
+    padding-right: 0;
+  }
+
+  .resources > div > ul a {
+    font-size: 16px;
+  }
+  
+  .resources > div > ul > li > a {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(34, 34, 34, .8);
+  }
+
+  .resources > div > ul > li > ul,
+  .index > ul > li > a:last-child {
+    display: block;
+  }
+
+  .resources > div.index > ul > li > a {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .resources > div.index > ul > li > a:last-child {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+  }
+
+  .resources > div.index > ul > li > a:last-child > i {
+    font-size: 10px;
+    margin-left: 8px;
+  }
+
+  /* End-Featured-Header */
+
+  /* Featured-Archive */
+
+  .featured-archive {
+    padding: 50px 0;
+  }
+
+  /* End-Featured-Archive */
+
+}
+/* ======= Archive-Post - Desktop+ ======= */
+
+@media (min-width: 992px) {
+
+  /* Featured-Header */
+
+  .featured-container {
+    padding: 80px 50px;
+  }
+  
+  .featured-header > h1 {
+    font-size: 36px;
+  }
+
+  /* End-Featured-Header */
+
+  /* Featured-Archive */
+
+  .featured-archive {
+    padding: 70px 0;
+  }
+
+  /* End-Featured-Archive */
+}
+
+/* ======= Archive-Post - Large Desktop+ ======= */
+@media (min-width: 1200px) {
+
+  .featured-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-bottom: 0;
+  }
+}
+
+/*===============================
+    Archive-Sermons
+  ===============================*/
+
+/* ======= Archive-Sermons - Mobile+ ======= */
+
+.archive-cards {
+  position: relative;
+  z-index: 0;
+  margin-bottom: 40px;
+}
+
+.archive-cards:hover  .scale > img.background-image {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.archive-cards:last-child {
+  margin-bottom: 0;
+}
+
+.archive-image {
+  height: 165px;
+  padding: 20px;
+  background-color: #F6F6F6;
+  -webkit-box-shadow: 1px 3px 6px 0px rgba(0,0,0,0.16);
+  -moz-box-shadow: 1px 3px 6px 0px rgba(0,0,0,0.16);
+  box-shadow: 1px 3px 6px 0px rgba(0,0,0,0.16);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.archive-play {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+
+.archive-play > button {
+  color: #fff;
+  font-size: 10px;
+  position: relative;  
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: #77AF44;
+  background-color: var(--primary-color-regular);
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+}
+
+.archive-play > button > i {
+  margin-left: 3px;
+  margin-top: 2px;
+}
+
+.archive-play > .article-label {
+  color: #fff;
+  font-size: 10px;
+}
+
+.archive-play:only-child > .article-label {
+  color: #3B3B3B;
+}
+
+.archive-content {
+  position: relative;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.archive-content > .background-label {
+  font-size: 50px;
+  top: 10px;
+}
+
+.archive-content > .background-label > span {
+  display: block;
+  white-space: nowrap;
+}
+
+.archive-content > .article-label {
+  letter-spacing: 1px;
+  color: #77AF44;
+  color: var(--primary-color-regular);
+}
+
+.archive-content > h1 {
+  font-size: 24px;
+  margin: 5px 0;
+  line-height: 1.3;
+  font-weight: 700;
+  color: rgba(34, 34, 34, .9);
+}
+
+.archive-tags > span {
+  position: relative;
+  padding: 0 3px 0 10px;
+}
+
+.archive-tags > span, 
+.archive-tags > span > a {
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(40, 40, 40, .9);
+  transition: color .25s;
+  font-family: 'Source Sans Pro', sans-serif;
+  -webkit-transition: color .25s;
+  -moz-transition: color .25s;
+  -ms-transition: color .25s;
+  -o-transition: color .25s;
+}
+
+.archive-tags > span > a {
+  margin-left: 5px;
+}
+
+.archive-tags > span:first-child {
+  padding-left: 0;
+}
+
+
+.archive-tags > span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 4px;
+  height: 4px;
+  background-color: rgba(34, 34, 34, .8);
+} 
+
+.archive-tags > span:first-child::before {
+  content: initial;
+}
+
+.archive-tags > span > a:hover,
+.archive-tags > span > a:focus,
+.archive-tags > span > a.js-touch {
+  color: #77AF44;
+  color: var(--primary-color-regular);
+}
+
+.archive-tags > span > a:active {
+  color: #659B34;
+  color: var(--primary-color-dark);
+}
+
+/* ======= Archive-Sermons - Large Mobile+ ======= */
+
+@media (min-width: 480px) {}
+
+/* ======= Archive-Sermons - Tablet+ ======= */
+
+@media (min-width: 768px) {
+
+  .archive-cards {
+    min-height: 225px;
+    margin-bottom: 60px;
+  }
+
+  .archive-cards > div {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .archive-cards > div > div:only-child{
+    width: 100%;
+    min-height: 225px;
+  }
+
+  .archive-image {
+    width: 50%;
+    height: initial;
+    min-height: 225px;
+  }
+  
+  .archive-content {
+    padding: 40px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .archive-content > .background-label {
+    font-size: 100px;
+    top: 0;
+    left: -150px;
+  }
+  
+  .archive-content > h1 {
+    font-size: 30px;
+    margin: 8px 0;
+  }
+  
+  .archive-tags > span, 
+  .archive-tags > span > a {
+    font-size: 14px;
+  }
+  
+  .archive-tags > span::before {
+    top: 8px;
+  } 
+
+}
+
+/* ======= Archive-Sermons - Desktop+ ======= */
+
+@media (min-width: 992px) {
+
+  .archive-cards {
+    margin-bottom: 80px;
+  }
+
+  .archive-play > button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .archive-play > .article-label {
+    font-size: 11px;
+  }  
+
+  .archive-content > h1 {
+    font-size: 40px;
+    margin: 10px 0;
+  }
+
+}
+
+/* ======= Archive-Sermons - Large Desktop+ ======= */
+@media (min-width: 1200px) {}
+
+
+/*===============================
+    Pagination
+  ===============================*/
+
+/* ======= Pagination - Mobile+ ======= */
+
+.pagination {
+  position: relative;
+  margin: 20px 0;
+  padding: 20px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  -webkit-box-shadow: 1px 2px 6px 0px rgba(0,0,0,0.16);
+  -moz-box-shadow: 1px 2px 6px 0px rgba(0,0,0,0.16);
+  box-shadow: 1px 2px 6px 0px rgba(0,0,0,0.16);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.pagination a, 
+.pagination span.current {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 5px;
+  margin: 0 5px;
+  min-width: 26px;
+  color: #222222;
+  padding: 6px 8px;
+  font-family: 'Source Sans Pro', sans-serif;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: color .25s, background-color .25s;
+  -webkit-transition: color .25s, background-color .25s;
+  -moz-transition: color .25s, background-color .25s;
+  -ms-transition: color .25s, background-color .25s;
+  -o-transition: color .25s, background-color .25s;
+}
+
+.pagination a:first-child {
+  margin-left: 0;
+}
+
+.pagination a:last-child {
+  margin-right: 0;
+}
+
+.pagination a.current,
+.pagination a:hover,
+.pagination a:active {
+  color: #77AF44;
+  color: var(--primary-color-regular);
+}
+
+.pagination span.current {
+  color: #fff;
+  background-color: #bf2e1a;
+}
+
+.pagination .prev, 
+.pagination .next {
+  font-size: 8px;
+  -ms-flex-item-align: center;
+  align-self: center;
+  padding: 10px 10px;
+  color: #000000;
+  background-color: #F6F6F6;
+  transition: all .25s;
+  -webkit-transition: all .25s;
+  -moz-transition: all .25s;
+  -ms-transition: all .25s;
+  -o-transition: all .25s;
+}
+
+.pagination .prev:hover, 
+.pagination .next:hover,
+.pagination .prev:focus, 
+.pagination .next:focus,
+.pagination .prev:active, 
+.pagination .next:active {
+  color: #fff;
+  background-color: #77AF44;
+  background-color: var(--primary-color-regular);
+}
+
+.pagination span {
+  margin: 0 5px;
+}
+
+/* ======= Pagination - Large Mobile+ ======= */
+@media (min-width: 480px) {}
+/* ======= Pagination - Tablet+ ======= */
 @media (min-width: 768px) {}
-/* ======= Archive-Sermon - Desktop+ ======= */
+/* ======= Pagination - Desktop+ ======= */
 @media (min-width: 992px) {}
-/* ======= Archive-Sermon - Large Desktop+ ======= */
+/* ======= Pagination - Large Desktop+ ======= */
 @media (min-width: 1200px) {}
 
 
