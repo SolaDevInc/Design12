@@ -211,6 +211,58 @@ $(".browse-dropdown").on('click', function() {
 });
 
 ///////////////////
+//Sermon-Tab
+//////////////////
+
+//Variable Setup
+var watchTab = $('.watch-tab');
+var listenTab = $('.listen-tab');
+var downloadTab = $('.download-tab');
+var watchContent = $("#watch-content");
+var listenContent = $('#listen-content');
+
+//Toggle to listen content when click listen
+$(listenTab).click(function(){	
+  $(this).addClass('js-current');
+	$(this).addClass('js-active');
+	$(watchTab).removeClass('js-current');
+	$(watchContent).removeClass('js-active');
+	$(downloadTab).removeClass('js-current');
+	$(listenContent).addClass('js-active');
+	$(watchTab).removeClass('js-active');
+	$(".sermon-download-opt").removeClass("js-active");
+});
+
+//Toggle to watch content when click watch
+$(watchTab).click(function(){	
+	$(this).addClass('js-current');
+	$(this).addClass('js-active');
+	$(listenTab).removeClass('js-current');
+	$(listenContent).removeClass('js-active');	
+	$(downloadTab).removeClass('js-current');
+	$(watchContent).addClass('js-active');
+	$(listenTab).removeClass('js-active');
+	$(".sermon-download-opt").removeClass("js-active");
+});
+
+//On click expand downloaditems
+$(downloadTab).each(function(){
+	var downloaditems = $(this).children(".sermon-download-opt");
+	//Click-Function
+	$(this).click(function(e){
+    event.stopPropagation();
+		$(this).toggleClass('js-current');
+	//downloaditems should toggle show/hide
+	$(downloaditems).toggleClass("js-active");
+	});
+});
+
+$(document).click(function() {
+  $(".sermon-download-opt").removeClass("js-active");
+  $(downloadTab).removeClass("js-current");
+});
+
+///////////////////
 // Click away
 //////////////////
 
