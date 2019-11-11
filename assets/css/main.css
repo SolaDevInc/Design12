@@ -4900,10 +4900,10 @@ svg.solasites-logo {
   ===============================*/
 
 /*===============================
-    Archive-Post
+    Archive-Browse
   ===============================*/
 
-/* ======= Archive-Post - Mobile+ ======= */
+/* ======= Archive-Browse - Mobile+ ======= */
 
 /* Featured-Header */
 
@@ -5081,11 +5081,11 @@ svg.solasites-logo {
 
 /* End-Featured-Archive */
 
-/* ======= Archive-Post - Large Mobile+ ======= */
+/* ======= Archive-Browse - Large Mobile+ ======= */
 
 @media (min-width: 480px) {}
 
-/* ======= Archive-Post - Tablet+ ======= */
+/* ======= Archive-Browse - Tablet+ ======= */
 
 @media (min-width: 768px) {
 
@@ -5174,7 +5174,7 @@ svg.solasites-logo {
   /* End-Featured-Archive */
 
 }
-/* ======= Archive-Post - Desktop+ ======= */
+/* ======= Archive-Browse - Desktop+ ======= */
 
 @media (min-width: 992px) {
 
@@ -5199,22 +5199,24 @@ svg.solasites-logo {
   /* End-Featured-Archive */
 }
 
-/* ======= Archive-Post - Large Desktop+ ======= */
+/* ======= Archive-Browse - Large Desktop+ ======= */
 @media (min-width: 1200px) {
 
   .featured-container {
     max-width: 1000px;
     margin: 0 auto;
     padding-left: 0;
-    padding-bottom: 0;
+    padding-right: 0;
   }
 }
 
 /*===============================
-    Archive-Sermons
+    Archive-Posts
   ===============================*/
 
-/* ======= Archive-Sermons - Mobile+ ======= */
+/* ======= Archive-Posts - Mobile+ ======= */
+
+/* Archive-Sermon */
 
 .archive-cards {
   position: relative;
@@ -5318,6 +5320,13 @@ svg.solasites-logo {
   color: rgba(34, 34, 34, .9);
 }
 
+.archive-content > p {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.16px;
+  color: rgba(34, 34, 34, .9);
+}
+
 .archive-tags > span {
   position: relative;
   padding: 0 3px 0 10px;
@@ -5343,7 +5352,6 @@ svg.solasites-logo {
 .archive-tags > span:first-child {
   padding-left: 0;
 }
-
 
 .archive-tags > span::before {
   content: "";
@@ -5371,13 +5379,80 @@ svg.solasites-logo {
   color: var(--primary-color-dark);
 }
 
-/* ======= Archive-Sermons - Large Mobile+ ======= */
+/* End-Archive-Sermon */
+
+/* Archive-Posts */
+
+
+.archive-postcards {
+  position: relative;
+  z-index: 0;
+  margin-bottom: 30px;
+}
+
+.archive-postcards:last-child {
+  margin-bottom: 0;
+}
+
+.archive-postcards .archive-content > p {
+  display: none;
+}
+
+.archive-postimage > .background-image-wrapper {
+  height: 180px;
+}
+
+.archive-readmore {
+  position: relative;
+  width: 150px;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 700;
+  padding: 15px 25px;
+  color: #222222;
+  z-index: 1;
+  margin-top: -30px;
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-start;
+  background-color: #fff;
+  text-transform: uppercase;    
+  -webkit-box-shadow: 1px 2px 20px 0px rgba(0,0,0,0.16);
+  -moz-box-shadow: 1px 2px 20px 0px rgba(0,0,0,0.16);
+  box-shadow: 1px 2px 20px 0px rgba(0,0,0,0.16);
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.archive-readmore > span {
+  margin-right: 5px;
+}
+
+.archive-readmore > span:last-child {
+  position: relative;
+}
+
+.archive-readmore > span:last-child::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  left: 42px;
+  bottom: 5px;
+  background-color: #77AF44;
+  background-color: var(--primary-color-regular);
+}
+
+/* End-Archive-Posts */
+
+/* ======= Archive-Posts - Large Mobile+ ======= */
 
 @media (min-width: 480px) {}
 
-/* ======= Archive-Sermons - Tablet+ ======= */
+/* ======= Archive-Posts - Tablet+ ======= */
 
 @media (min-width: 768px) {
+
+  /* Archive-Sermon */
 
   .archive-cards {
     min-height: 225px;
@@ -5402,6 +5477,7 @@ svg.solasites-logo {
   
   .archive-content {
     padding: 40px;
+    padding-right: 0;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -5428,11 +5504,104 @@ svg.solasites-logo {
     top: 8px;
   } 
 
+  /* End-Archive-Sermon */
+
+  /* Archive-Posts */
+
+  .archive-postcards {
+    margin-bottom: 90px;
+  }
+
+  .archive-postcards > div {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .archive-postcards  div > .archive-content {
+    width: calc(100% - 365px);
+    padding-left: 70px;
+  }
+
+  .archive-postimage {
+    width: 365px;
+  }
+
+  .archive-postcards:nth-child(odd)  div > .archive-content {
+    order: 2;
+  }
+
+  .archive-postcards:nth-child(odd)  div > .archive-postimage {
+    order: 1;
+  }
+
+  .archive-postcards:nth-child(even)  div > .archive-content {
+    order: 1;
+    padding-left: 0;
+    padding-right: 70px;
+  }
+
+  .archive-postcards:nth-child(even)  div > .archive-postimage {
+    order: 2;
+  }
+
+  .archive-postcards:nth-child(even)  div > .archive-postimage > .background-image-wrapper {
+    margin-left: auto;
+  }
+
+  .archive-postcards:nth-child(even)  div .archive-readmore {
+    margin-left: initial;
+    margin-right: auto;
+  }
+
+  .archive-postcards:nth-child(even)  div > .archive-content .background-label {
+    left: 0;
+  }
+
+  .archive-postcards .archive-content > p {
+    display: block;
+  }
+
+  .archive-postimage > .background-image-wrapper {
+    min-height: 415px;
+    width: 310px;
+  }
+
+  .archive-readmore {
+    width: 124px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -124px;
+    font-size: 18px;
+    height: 124px;
+  }
+
+  .archive-readmore > span {
+    margin-right: 0;
+  }
+
+  .archive-readmore > span:last-child::after {
+    width: 32px;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+  }
+
+  /* End-Archive-Posts */
+
+
 }
 
-/* ======= Archive-Sermons - Desktop+ ======= */
+/* ======= Archive-Posts - Desktop+ ======= */
 
 @media (min-width: 992px) {
+
+  /* Archive-Sermon */
 
   .archive-cards {
     margin-bottom: 80px;
@@ -5452,11 +5621,42 @@ svg.solasites-logo {
     margin: 10px 0;
   }
 
+  /* End-Archive-Sermon */
+
+  /* Archive-Posts */
+
+  .archive-postcards {
+    margin-bottom: 95px;
+  }
+
+  .archive-postcards  div > .archive-content {
+    width: calc(100% - 440px);
+  }
+
+  .archive-postimage {
+    width: 440px;
+  }
+
+  .archive-postimage > .background-image-wrapper {
+    min-height: 490px;
+    width: 365px;
+  }
+
+  .archive-readmore {
+    width: 140px;
+    margin-top: -140px;
+    font-size: 20px;
+    height: 140px;
+  }
+
+  /* End-Archive-Posts */
+
 }
 
-/* ======= Archive-Sermons - Large Desktop+ ======= */
-@media (min-width: 1200px) {}
+/* ======= Archive-Posts - Large Desktop+ ======= */
+@media (min-width: 1200px) {
 
+}
 
 /*===============================
     Pagination
@@ -5466,8 +5666,8 @@ svg.solasites-logo {
 
 .pagination {
   position: relative;
-  margin: 20px 0;
-  padding: 20px;
+  margin-bottom: 20px;
+  padding: 20px 5%;
   z-index: 1;
   display: flex;
   align-items: center;
@@ -5491,7 +5691,7 @@ svg.solasites-logo {
   border-radius: 5px;
   margin: 0 5px;
   min-width: 26px;
-  color: #222222;
+  color: #000;
   padding: 6px 8px;
   font-family: 'Source Sans Pro', sans-serif;
   -webkit-border-radius: 5px;
@@ -5522,7 +5722,8 @@ svg.solasites-logo {
 
 .pagination span.current {
   color: #fff;
-  background-color: #bf2e1a;
+  background-color: #77AF44;
+  background-color: var(--primary-color-regular);
 }
 
 .pagination .prev, 
@@ -5556,27 +5757,91 @@ svg.solasites-logo {
 }
 
 /* ======= Pagination - Large Mobile+ ======= */
+
 @media (min-width: 480px) {}
+
 /* ======= Pagination - Tablet+ ======= */
-@media (min-width: 768px) {}
+
+@media (min-width: 768px) {
+
+  .pagination {
+    margin: 30px auto 20px;
+    padding: 20px 15%;
+    max-width: 840px;
+  }
+  
+  .pagination a, 
+  .pagination span.current {
+    font-size: 16px;
+  }
+
+  
+  .pagination .prev, 
+  .pagination .next {
+    font-size: 10px;
+  }
+
+}
+
 /* ======= Pagination - Desktop+ ======= */
-@media (min-width: 992px) {}
+
+@media (min-width: 992px) {
+
+  .pagination {
+    padding: 30px 20%;
+  }
+
+}
+
 /* ======= Pagination - Large Desktop+ ======= */
 @media (min-width: 1200px) {}
 
-
 /*===============================
-    Archive-Blog
+  ===============================
+    Single-Posts
+  ===============================
   ===============================*/
 
-/* ======= Archive-Blog - Mobile+ ======= */
-/* ======= Archive-Blog - Large Mobile+ ======= */
+/*===============================
+    Single-Posts
+  ===============================*/
+
+/* ======= Single-Posts - Mobile+ ======= */
+
+.featured-sermon {
+  position: relative;
+  background-color: #F6F6F6;
+}
+
+.featured-single-sermon {
+  padding: 30px 15px;
+}
+
+#watch-content, 
+#listen-content {
+  display: none;
+}
+
+#watch-content.js-active, 
+#listen-content.js-active {
+  display: block;
+}
+
+#watch-content, #responsive-embed {
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ======= Single-Posts - Large Mobile+ ======= */
 @media (min-width: 480px) {}
-/* ======= Archive-Blog - Tablet+ ======= */
+/* ======= Single-Posts - Tablet+ ======= */
 @media (min-width: 768px) {}
-/* ======= Archive-Blog - Desktop+ ======= */
+/* ======= Single-Posts - Desktop+ ======= */
 @media (min-width: 992px) {}
-/* ======= Archive-Blog - Large Desktop+ ======= */
+/* ======= Single-Posts - Large Desktop+ ======= */
 @media (min-width: 1200px) {}
 
 
