@@ -173,7 +173,7 @@ var pageTitle = encodeURIComponent($(".page-title").text());
 var blockPullquote = $(".wp-block-pullquote > blockquote");
 
 //Add Share Buttons to Blockquote in DOM
-var shareLink = $('<div class="pullquote-share"><a href="#" class="tweet-Share"><i class="icon-twitter"></i></a><a href="#" class="facebook-share"><i class="icon-facebook1"></i></a></div>');
+var shareLink = $('<div class="pullquote-share"><a href="#" class="twitter-Share"><i class="icon-twitter"></i></a><a href="#" class="facebook-share"><i class="icon-facebook1"></i></a></div>');
 $(blockPullquote).append(shareLink); 
 
 //Popup Window
@@ -190,16 +190,59 @@ function socialWindow(url) {
 //Defining Content for Social Sharing	For Pullquotes
 //Click-Function
 
-jQuery(".facebook-share").on("click", function() {
+$(".facebook-share").on("click", function() {
   var blockquoteText = encodeURIComponent($(this).parent().siblings(".wp-block-pullquote > blockquote > p").text());
   url = "https://m.facebook.com/sharer.php?u=" + pageUrl + "&quote=" + blockquoteText;
   socialWindow(url);
 });
 
-jQuery(".tweet-Share").on("click", function() {
+$(".twitter-Share").on("click", function() {
   var blockquoteText = encodeURIComponent($(this).parent().siblings(".wp-block-pullquote > blockquote > p").text());
   url = "https://twitter.com/intent/tweet?text=" + pageUrl + ' ' + blockquoteText;
   socialWindow(url);
+});
+
+//Defining Content for Social Sharing	For Page title and url;
+//Click-Function
+$('.fb-share').on('click', function() {
+  url = "https://m.facebook.com/sharer.php?u=" + pageUrl;
+  socialWindow(url);	
+});
+
+$('.twitt-share').on('click', function() {
+  url = "https://twitter.com/intent/tweet?text=" + pageUrl;
+  socialWindow(url);	
+});
+
+// Share Email
+
+function sendMail() {
+  var link = 'mailto:?subject=' + pageTitle 
+           + '&body=' + window.location;
+  window.location.href = link;
+  return false;
+}
+
+//Copy Link to Clipboard
+
+$(document).ready(function () {
+  var $currentUrl = window.location.href;
+  $("#input-url").val($currentUrl);
+});
+
+function copiedLink() {
+  var $copied = $('<div class="copied"><span>Link Copied!</span></div>');
+  var $bodyMain = $("main");
+  $bodyMain.append($copied);
+	setTimeout(function() {
+		$copied.remove();
+	}, 1000);
+}
+
+var clipboard = new ClipboardJS('.copy-link');
+
+clipboard.on('success', function(e) {
+  copiedLink();
 });
 
 //////////////////////////////
@@ -257,16 +300,39 @@ $(downloadTab).each(function(){
 	});
 });
 
-$(document).click(function() {
-  $(".sermon-download-opt").removeClass("js-active");
-  $(downloadTab).removeClass("js-current");
+///////////////////
+// Share
+//////////////////
+
+$(".share-btn").on('click', function(){
+  $(this).siblings(".social-share").toggleClass("js-active")
+});
+
+///////////////////
+// Clamp Text
+//////////////////
+
+$('.line-clamp-1').each(function(index, element) {
+  $clamp(element, { clamp: 1 });
+});
+
+$('.line-clamp-2').each(function(index, element) {
+  $clamp(element, { clamp: 2 });
+});
+
+$('.line-clamp-3').each(function(index, element) {
+  $clamp(element, { clamp: 3 });
+});
+
+$('.line-clamp-4').each(function(index, element) {
+  $clamp(element, { clamp: 4 });
 });
 
 ///////////////////
 // Click away
 //////////////////
 
-var removeClassArray = ['.mob-search', '.browse-dropdown', '.browse-language-btn', '.browse-resource-btn', '.browse-resources', '.browse-language'];
+var removeClassArray = ['.mob-search', '.browse-dropdown', '.sermon-download-opt', '.social-share', '.browse-resources', '.browse-language'];
 $(document).mouseup(function(e) {
   for (var i=0; i < removeClassArray.length; i++) {
     var removeActiveClasses = $(removeClassArray[i]);
