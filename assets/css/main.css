@@ -303,7 +303,7 @@ img.background-image {
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: rgba(0,0,0,0.02);
+  color: rgba(0,0,0,0.03);
 }
 
 /* ======= Utility-classes - Tablet+ ======= */
@@ -6746,7 +6746,14 @@ svg.solasites-logo {
 }
 
 /* ======= Single-Posts - Large Desktop+ ======= */
-@media (min-width: 1200px) {}
+@media (min-width: 1600px) {
+
+  .featured-single-posts > .archive-content {
+    padding: 50px 30%;
+  }
+
+}
+
 
 /*===============================
   ===============================
